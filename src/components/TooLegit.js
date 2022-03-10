@@ -4,13 +4,13 @@ import { ApplicationViews } from "./ApplicationViews";
 import { NavBar } from "./nav/NavBar";
 import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
-import "./Repairs.css";
+import "./TooLegit.css"
 
-export const TooLegit = () => {
+export const TooLegit = () => (
     <>
     <Route
         render={() => {
-            if (localStorage.getItem("legit_customer")) {
+            if (localStorage.getItem("legit_user")) {
                 return (
                     <>
                         <NavBar />
