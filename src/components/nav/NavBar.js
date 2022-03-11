@@ -8,6 +8,9 @@ export const NavBar = () => {
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/tasks">Tasks</Link>
             </li>
+            <li className="navbar__item active">
+                <Link className="navbar__link" to="/taskform">Add a new task</Link>
+            </li>
             <li className="navbar__item">
                 <Link className="navbar__link" to="#"
                 onClick={
