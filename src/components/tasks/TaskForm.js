@@ -9,7 +9,8 @@ export const TaskForm = () => {
     const [task, addTask] = useState({
         description: "",
         urgent: false,
-        category: ""
+        category: "",
+        completed: false
     });
 
 
@@ -43,7 +44,8 @@ export const TaskForm = () => {
             description: task.description,
             urgent: task.urgent,
             userId: parseInt(localStorage.getItem("legit_user")),
-            categoryId: task.categoryId
+            categoryId: task.categoryId,
+            completed: task.completed
         }
 
         // use POST method to create the task - stringify 
@@ -62,8 +64,9 @@ export const TaskForm = () => {
                 history.push("/tasks")
             })
     }
+    // this .then returns you to task list^
 
-    // write html format of the whole task formwith the event listeners inside 
+    // write html format of the whole task form with the event listeners inside 
     return (
         <form className="taskForm">
             <h2 className="taskForm__title">Add a New Task</h2>
