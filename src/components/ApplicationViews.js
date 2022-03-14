@@ -7,6 +7,9 @@ import { TaskForm } from "./tasks/TaskForm"
 export const ApplicationViews = () => {
     return (
         <>
+            <Route exact path="/">
+                <TaskList />
+            </Route>
             <Route path="/tasks">
                 <TaskList />
             </Route>
