@@ -30,7 +30,6 @@ export const TaskList = () => {
     )
 
     // add a delete function
-
     const deleteTask = (id) => {
         fetch(`http://localhost:8088/tasks/${id}`, {
             method: "DELETE"
@@ -56,14 +55,21 @@ export const TaskList = () => {
     const editTask = (id) => {
         const updatedTasks = [...tasks].map((task) => {
             if (task.id === id) {
-                task.text = editingText
+                task.description = editingText
             }
             return task
         })
+
+        console.log(updatedTasks)
         setTasks(updatedTasks)
         setTaskEditing(null)
         setEditingText("")
     }
+
+    // add a POST method that updates task property updates
+    // add updateTask function to button onClick for submit?
+
+
 
     return (
 
