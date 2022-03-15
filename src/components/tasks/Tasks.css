@@ -1,0 +1,24 @@
+.personal { 
+    display: legacy;
+    background: rgb(90, 138, 90);
+    padding: 5px;
+    line-height: 2;
+}
+
+.work {
+    display: legacy;
+    background: rgb(125, 182, 209);
+    padding: 5px;
+    line-height: 2;
+}
+
+.school {
+    display: legacy;
+    background: rgb(201, 129, 201);
+    padding: 5px;
+    line-height: 2;
+}
+
+.listItem {
+    font-size: large;
+}

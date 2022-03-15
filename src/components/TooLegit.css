@@ -3,7 +3,9 @@
 
 /*Typography
 --------------------------------------------------------------*/
-body,
+body {
+    text-align: center;
+}
 button,
 input,
 select,

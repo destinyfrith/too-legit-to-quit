@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
+import './Tasks.css';
 
 // create the function responsible for displaying the task list/manager
 // set initial state variables 
@@ -41,6 +42,8 @@ export const TaskList = () => {
     }
 
     // add ability to mark as complete
+    // set new state of the updated task
+    // invoke function that updates new task and pass id of task as parameter
     const toggleComplete = (id) => {
         const updatedTasks = [...tasks].map((task) => {
             if (task.id === id) {
@@ -102,39 +105,43 @@ export const TaskList = () => {
 
 
 
-return (
+    return (
 
-    tasks.map(
-        (task) => {
-            return <div key={`task--${task.id}`}>
-
-
-                {taskEditing === task.id ?
-                    (<input
-                        type="text"
-                        onChange={(event) => setEditingText(event.target.value)}
-                        value={editingText}
-                    />)
-                    :
-                    (<div>{task.description}</div>)}
-
-                <button onClick={() => { deleteTask(task.id) }}> Delete</button>
-
-                <input type="checkbox"
-                    onChange={() => toggleComplete(task.id)}
-                    checked={task.completed} />
-
-                {taskEditing === task.id ?
-                    (<button onClick={() => editTask(task.id)}>Submit Edits</button>)
-                    :
-                    (<button onClick={() => setTaskEditing(task.id)}> Edit</button>)}
+        tasks.map(
+            (task) => {
+                return <div key={`task--${task.id}`} className="list-item">
+                    <p className={`task ${task.categoryId === "1" ? `personal` : ""}`}></p>
+                    <p className={`task ${task.categoryId === "2" ? `work` : ""}`}></p>
+                    <p className={`task ${task.categoryId === "3" ? `school` : ""}`}></p>
 
 
-            </div>
-        }
+                    {taskEditing === task.id ?
+                        (<input
+                            type="text"
+                            onChange={(event) => setEditingText(event.target.value)}
+                            value={editingText}
+                        />)
+                        :
+                        (<div>{task.description}</div>)}
+
+                        <button onClick={() => { deleteTask(task.id) }}> Delete</button>
+
+                    <input type="checkbox"
+                        onChange={() => toggleComplete(task.id)}
+                        checked={task.completed} />
+
+                    {taskEditing === task.id ?
+                        (<button onClick={() => editTask(task.id)}>Submit Edits</button>)
+                        :
+                        (<button onClick={() => setTaskEditing(task.id)}> Edit</button>)}
+
+                </div>
+                
+            }
+        )
+
     )
-)
-    }
+}
 
 
 // iterate through the tasks array and return each individual task 
