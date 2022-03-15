@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { useHistory } from "react-router-dom"
 
 // create the function responsible for displaying the task list/manager
 // set initial state variables 
@@ -8,7 +9,7 @@ export const TaskList = () => {
     const [taskEditing, setTaskEditing] = useState(null)
     const [editingText, setEditingText] = useState("")
 
-// save local data to update completed boxes?
+    const history = useHistory()
 
     // fetch all existing tasks from the database
     // set the initial state
@@ -48,6 +49,7 @@ export const TaskList = () => {
             return task
         })
         setTasks(updatedTasks)
+        updateTask(id)
     }
 
     // function that allows edits to save and update
@@ -64,46 +66,76 @@ export const TaskList = () => {
         setTasks(updatedTasks)
         setTaskEditing(null)
         setEditingText("")
+        updateTask(id)
+
     }
 
-    // add a POST method that updates task property updates
+    // add a PUT method that updates task property updates
     // add updateTask function to button onClick for submit?
+    // should have the format of the object
+    const updateTask = (id) => {
 
-
-
-    return (
-
-        tasks.map(
+        const updatedTask = tasks.find(
             (task) => {
-                return <div key={`task--${task.id}`} > 
+                if (task.id === id) {
+                    return true
+                }
 
-
-                    {taskEditing === task.id ?
-                        (<input
-                            type="text"
-                            onChange={(event) => setEditingText(event.target.value)}
-                            value={editingText}
-                        />)
-                        :
-                        (<div>{task.description}</div>)}
-
-                    <button onClick={() => { deleteTask(task.id) }}> Delete</button>
-
-                    <input type="checkbox"
-                        onChange={() => toggleComplete(task.id)}
-                        checked={task.completed} />
-
-                    {taskEditing === task.id ?
-                        (<button onClick={() => editTask(task.id)}>Submit Edits</button>)
-                        :
-                        (<button onClick={() => setTaskEditing(task.id)}> Edit</button>)}
-
-
-                </div>
             }
         )
+
+
+
+        // Perform the PUT HTTP request to replace the resource
+        fetch(`http://localhost:8088/tasks/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updatedTask)
+        })
+            .then(() => {
+                history.push("/tasks")
+            })
+    }
+
+
+
+
+return (
+
+    tasks.map(
+        (task) => {
+            return <div key={`task--${task.id}`}>
+
+
+                {taskEditing === task.id ?
+                    (<input
+                        type="text"
+                        onChange={(event) => setEditingText(event.target.value)}
+                        value={editingText}
+                    />)
+                    :
+                    (<div>{task.description}</div>)}
+
+                <button onClick={() => { deleteTask(task.id) }}> Delete</button>
+
+                <input type="checkbox"
+                    onChange={() => toggleComplete(task.id)}
+                    checked={task.completed} />
+
+                {taskEditing === task.id ?
+                    (<button onClick={() => editTask(task.id)}>Submit Edits</button>)
+                    :
+                    (<button onClick={() => setTaskEditing(task.id)}> Edit</button>)}
+
+
+            </div>
+        }
     )
-}
+)
+    }
+
 
 // iterate through the tasks array and return each individual task 
 // you access each task thorugh id & you interpolate the description 
