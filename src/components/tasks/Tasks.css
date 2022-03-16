@@ -19,6 +19,15 @@
     line-height: 2;
 }
 
-.listItem {
-    font-size: large;
+
+.list-item {
+    margin: 0 auto;
+    width: 40rem;
+    font-size: 16px;
+}
+
+.taskForm{
+justify-content: center;
+width: 40rem;
+margin: 0 auto;
 }
