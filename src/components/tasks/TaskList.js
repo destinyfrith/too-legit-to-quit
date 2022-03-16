@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import './Tasks.css';
+import { Button, IconButton } from "@mui/material";
+import DeleteOutlined from "@mui/icons-material/DeleteOutlined"
+import EditOutlined from "@mui/icons-material/EditOutlined"
 
 // create the function responsible for displaying the task list/manager
 // set initial state variables 
@@ -106,52 +109,65 @@ export const TaskList = () => {
 
 
     return (
-<>
-<h2>Current Tasks:</h2>
-    {
-            tasks.map(
-            (task) => {
-                return <div key={`task--${task.id}`} >
+        <>
+            <h2>Current Tasks:</h2>
+            {
+                tasks.map(
+                    (task) => {
+                        return <div key={`task--${task.id}`} >
 
-                    <div className="list-item">
-                        <p className={`task ${task.categoryId === "1" ? `personal` : ""}`}>
-                            <p className={`task ${task.categoryId === "2" ? `work` : ""}`}>
-                                <p className={`task ${task.categoryId === "3" ? `school` : ""}`}>
+                            <div className="list-item">
+                                <p className={`task ${task.categoryId === "1" ? `personal` : ""}`}>
+                                    <p className={`task ${task.categoryId === "2" ? `work` : ""}`}>
+                                        <p className={`task ${task.categoryId === "3" ? `school` : ""}`}>
 
-                                    {taskEditing === task.id ?
-                                        (<input
-                                            type="text"
-                                            onChange={(event) => setEditingText(event.target.value)}
-                                            value={editingText}
-                                        />)
-                                        :
-                                        (task.description)
-                                    }
+                                            {taskEditing === task.id ?
+                                                (<input
+                                                    type="text"
+                                                    onChange={(event) => setEditingText(event.target.value)}
+                                                    value={editingText}
+                                                />)
+                                                :
+                                                (task.description)
+                                            }
+
+                                            <Button variant="outlined">
+                                                {task.categoryId === "1" ?
+                                                    ("PERSONAL")
+                                                    :
+                                                    task.categoryId === "2" ?
+                                                        ("WORK")
+                                                        :
+                                                        task.categoryId === "3" ?
+                                                            ("SCHOOL")
+                                                            :
+                                                            ""}
+                                            </Button>
+
+                                            <IconButton onClick={() => { deleteTask(task.id) }}> <DeleteOutlined /></IconButton>
+
+                                            <input type="checkbox"
+                                                onChange={() => toggleComplete(task.id)}
+                                                checked={task.completed} />
+
+                                            {taskEditing === task.id ?
+                                                (<button onClick={() => editTask(task.id)}>Submit Edits</button>)
+                                                :
+                                                (<IconButton onClick={() => setTaskEditing(task.id)}> <EditOutlined /> </IconButton>)}
+
+                                        </p></p></p>
+                            </div>
+                        </div>
+                    }
 
 
-                                    <button onClick={() => { deleteTask(task.id) }}> Delete</button>
-
-                                    <input type="checkbox"
-                                        onChange={() => toggleComplete(task.id)}
-                                        checked={task.completed} />
-
-                                    {taskEditing === task.id ?
-                                        (<button onClick={() => editTask(task.id)}>Submit Edits</button>)
-                                        :
-                                        (<button onClick={() => setTaskEditing(task.id)}> Edit</button>)}
-
-                                </p></p></p>
-                    </div>
-                </div>
+                )
             }
-
-            
-        )
-}
         </>
     )
 }
 
+// if task.category = personal, insert button PERSONAL, else null
 
 // iterate through the tasks array and return each individual task 
 // you access each task thorugh id & you interpolate the description 
