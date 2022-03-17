@@ -110,68 +110,78 @@ export const TaskList = () => {
 
     return (
         <>
-            <h2>Current Tasks:</h2>
+            <h2>CURRENT TASKS:</h2>
             {
                 tasks.map(
+
                     (task) => {
-                        return <div key={`task--${task.id}`} >
 
-                            <div className="list-item">
-                                <p className={`task ${task.categoryId === "1" ? `personal` : ""}`}>
-                                    <p className={`task ${task.categoryId === "2" ? `work` : ""}`}>
-                                        <p className={`task ${task.categoryId === "3" ? `school` : ""}`}>
+                        if (task.userId === parseInt(localStorage.getItem("legit_user"))) {
+                            return <div key={`task--${task.id}`} >
 
-                                            {taskEditing === task.id ?
-                                                (<input
-                                                    type="text"
-                                                    onChange={(event) => setEditingText(event.target.value)}
-                                                    value={editingText}
-                                                />)
-                                                :
-                                                (task.description)
-                                            }
+                                <div className="list-item">
+                                    <div className={`task ${task.categoryId === "1" ? `personal` : ""}`}>
+                                        <div className={`task ${task.categoryId === "2" ? `work` : ""}`}>
+                                            <div className={`task ${task.categoryId === "3" ? `school` : ""}`}>
 
-                                            <Button variant="outlined">
-                                                {task.categoryId === "1" ?
-                                                    ("PERSONAL")
+                                                {taskEditing === task.id ?
+                                                    (<input
+                                                        type="text"
+                                                        onChange={(event) => setEditingText(event.target.value)}
+                                                        value={editingText}
+                                                    />)
                                                     :
-                                                    task.categoryId === "2" ?
-                                                        ("WORK")
+                                                    (task.description)
+                                                }
+
+                                                <Button variant="outlined" color="secondary" size="small">
+                                                    {task.categoryId === "1" ?
+                                                        ("PERSONAL")
                                                         :
-                                                        task.categoryId === "3" ?
-                                                            ("SCHOOL")
+                                                        task.categoryId === "2" ?
+                                                            ("WORK")
                                                             :
-                                                            ""}
-                                            </Button>
+                                                            task.categoryId === "3" ?
+                                                                ("SCHOOL")
+                                                                :
+                                                                ""}
+                                                </Button>
 
-                                            <IconButton onClick={() => { deleteTask(task.id) }}> <DeleteOutlined /></IconButton>
+                                                <IconButton onClick={() => { deleteTask(task.id) }}> <DeleteOutlined /></IconButton>
 
-                                            <input type="checkbox"
-                                                onChange={() => toggleComplete(task.id)}
-                                                checked={task.completed} />
+                                                <input type="checkbox"
+                                                    onChange={() => toggleComplete(task.id)}
+                                                    checked={task.completed} />
 
-                                            {taskEditing === task.id ?
-                                                (<button onClick={() => editTask(task.id)}>Submit Edits</button>)
-                                                :
-                                                (<IconButton onClick={() => setTaskEditing(task.id)}> <EditOutlined /> </IconButton>)}
+                                                {taskEditing === task.id ?
+                                                    (<button onClick={() => editTask(task.id)}>Submit Edits</button>)
+                                                    :
+                                                    (<IconButton onClick={() => setTaskEditing(task.id)}> <EditOutlined /> </IconButton>)}
 
-                                        </p></p></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        }
+
                     }
-
-
                 )
+                    
             }
         </>
     )
+
 }
 
 // if task.category = personal, insert button PERSONAL, else null
 
 // iterate through the tasks array and return each individual task 
+// if userId of task that you're iterating through matches the id of the currently logged in user
 // you access each task thorugh id & you interpolate the description 
 
 // add edit button
 // add delete button
 // add ability to mark complete
+
+// if task.userId ===  parseInt(localStorage.getItem("legit_user")
