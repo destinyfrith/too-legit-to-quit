@@ -74,6 +74,7 @@ export const TaskForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="description">Description:</label>
+
                     <input
                         required autoFocus
                         type="text"
@@ -114,7 +115,7 @@ export const TaskForm = () => {
 
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="name">Urgent?</label>
+                    <label htmlFor="name">Is this task urgent?</label>
                     <input type="checkbox"
                         // can't check a checkbox's value but you can check to see if it's checked
                         onChange={
@@ -127,7 +128,7 @@ export const TaskForm = () => {
                 </div>
             </fieldset>
 
-            <button onClick={submitTask} className="btn btn-primary">
+            <button onClick={submitTask} className="btn-primary">
                 Add Task
             </button>
         </form>

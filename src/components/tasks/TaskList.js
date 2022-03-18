@@ -110,65 +110,70 @@ export const TaskList = () => {
 
     return (
         <>
-            <h2>CURRENT TASKS:</h2>
-            {
-                tasks.map(
+            <div className="list_container">
+                <h2>CURRENT TASKS:</h2>
+                <div className="list_wrapper">
+                    {
+                        tasks.map(
 
-                    (task) => {
+                            (task) => {
 
-                        if (task.userId === parseInt(localStorage.getItem("legit_user"))) {
-                            return <div key={`task--${task.id}`} >
+                                if (task.userId === parseInt(localStorage.getItem("legit_user"))) {
+                                    return <div key={`task--${task.id}`} >
 
-                                <div className="list-item">
-                                    <div className={`task ${task.categoryId === "1" ? `personal` : ""}`}>
-                                        <div className={`task ${task.categoryId === "2" ? `work` : ""}`}>
-                                            <div className={`task ${task.categoryId === "3" ? `school` : ""}`}>
+                                        <div className="list-item">
+                                            <div className={`task ${task.categoryId === "1" ? `personal` : ""}`}>
+                                                <div className={`task ${task.categoryId === "2" ? `work` : ""}`}>
+                                                    <div className={`task ${task.categoryId === "3" ? `school` : ""}`}>
 
-                                                {taskEditing === task.id ?
-                                                    (<input
-                                                        type="text"
-                                                        onChange={(event) => setEditingText(event.target.value)}
-                                                        value={editingText}
-                                                    />)
-                                                    :
-                                                    (task.description)
-                                                }
+                                                    <input type="checkbox" className="checkbox"
+                                                            onChange={() => toggleComplete(task.id)}
+                                                            checked={task.completed} />
 
-                                                <Button variant="outlined" color="secondary" size="small">
-                                                    {task.categoryId === "1" ?
-                                                        ("PERSONAL")
-                                                        :
-                                                        task.categoryId === "2" ?
-                                                            ("WORK")
+                                                        {taskEditing === task.id ?
+                                                            (<input
+                                                                type="text"
+                                                                onChange={(event) => setEditingText(event.target.value)}
+                                                                value={editingText}
+                                                            />)
                                                             :
-                                                            task.categoryId === "3" ?
-                                                                ("SCHOOL")
+                                                            (task.description)
+                                                        } {""}
+
+                                                        <span class="label bg-green">
+                                                            {task.categoryId === "1" ?
+                                                                ("PERSONAL")
                                                                 :
-                                                                ""}
-                                                </Button>
+                                                                task.categoryId === "2" ?
+                                                                    ("WORK")
+                                                                    :
+                                                                    task.categoryId === "3" ?
+                                                                        ("SCHOOL")
+                                                                        :
+                                                                        ""}
+                                                        </span>
 
-                                                <IconButton onClick={() => { deleteTask(task.id) }}> <DeleteOutlined /></IconButton>
+                                                        <IconButton onClick={() => { deleteTask(task.id) }}> <DeleteOutlined /></IconButton>
 
-                                                <input type="checkbox"
-                                                    onChange={() => toggleComplete(task.id)}
-                                                    checked={task.completed} />
+                                                        {taskEditing === task.id ?
+                                                            (<button onClick={() => editTask(task.id)}>Submit Edits</button>)
+                                                            :
+                                                            (<IconButton onClick={() => setTaskEditing(task.id)}> <EditOutlined /> </IconButton>)}
 
-                                                {taskEditing === task.id ?
-                                                    (<button onClick={() => editTask(task.id)}>Submit Edits</button>)
-                                                    :
-                                                    (<IconButton onClick={() => setTaskEditing(task.id)}> <EditOutlined /> </IconButton>)}
-
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        }
+
+                                }
+
+                            }
+                        )
 
                     }
-                )
-                    
-            }
+                </div>
+            </div>
         </>
     )
 

@@ -5,25 +5,25 @@ import "./NavBar.css"
 export const NavBar = () => {
     return (
         <ul className="navbar">
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/tasks/">My Tasks</Link>
-            </li>
 
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/taskform">Add a new task</Link>
-            </li>
+                    <li className="navbar__item active">
+                        <Link className="navbar__link" to="/tasks/">My Tasks</Link>
+                    </li>
 
-            <li className="navbar__item">
-                <Link className="navbar__link" to="#"
-                onClick={
-                    () => {
-                        localStorage.removeItem("legit_user")
-                    }
-                }>
-                Logout
-            </Link>
-            </li>
+                    <li className="navbar__item active">
+                        <Link className="navbar__link" to="/taskform">Add new task</Link>
+                    </li>
 
+                    <li className="navbar__item">
+                        <Link className="navbar__link" to="#"
+                            onClick={
+                                () => {
+                                    localStorage.removeItem("legit_user")
+                                }
+                            }>
+                            Logout
+                        </Link>
+                    </li>
         </ul>
     )
 }

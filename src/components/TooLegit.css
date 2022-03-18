@@ -3,24 +3,30 @@
 
 /*Typography
 --------------------------------------------------------------*/
+
 body {
+    display:flex;
+    justify-content: center;
     text-align: center;
+    overflow: hidden;
+    height: 100vh;
+    background: linear-gradient(goldenrod, rgb(89, 168, 89)) no-repeat;
 }
 button,
 input,
 select,
 textarea {
-color: #404040;
+color: #0a0a0a;
 font-family: 'Inter', sans-serif;
 font-size: 14px;
-line-height: 1.5;
+line-height: 1;
 }
 
 h1, h2, h3, h4, h5, h6 {
 font-family: "Inter", serif;
-letter-spacing: 2px;
+letter-spacing: 6px;
 }
 
 p {
-margin-bottom: 1.5em;
+    margin-bottom: 2em;
 }

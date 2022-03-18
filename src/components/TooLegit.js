@@ -14,6 +14,7 @@ export const TooLegit = () => (
                 return (
                     <>
                         <NavBar />
+                        <h1>Too Legit to Quit!</h1>
                         <ApplicationViews />
                     </>
                 );
