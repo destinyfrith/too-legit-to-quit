@@ -1,5 +1,5 @@
 /* Import the google web fonts you want to use */
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap'); */
 
 /*Typography
 --------------------------------------------------------------*/
@@ -9,24 +9,30 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    height: 100vh;
-    background: linear-gradient(goldenrod, rgb(89, 168, 89)) no-repeat;
+    height: 150vh;
+    width: 100%;
+    background: linear-gradient(goldenrod, rgb(153, 223, 153)) no-repeat;
 }
-button,
+button {
+    padding: 10px;
+}
 input,
 select,
 textarea {
 color: #0a0a0a;
-font-family: 'Inter', sans-serif;
-font-size: 14px;
 line-height: 1;
 }
 
-h1, h2, h3, h4, h5, h6 {
-font-family: "Inter", serif;
-letter-spacing: 6px;
+header {
+    font-size: 50px;
+    letter-spacing: 4px;
 }
 
-p {
-    margin-bottom: 2em;
+h1, h2, h3, h4, h5, h6 {
+letter-spacing: 6px;
+font-size: 22px;
+}
+
+#root  {
+    width: 100%;
 }

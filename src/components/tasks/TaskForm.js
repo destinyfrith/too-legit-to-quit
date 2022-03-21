@@ -69,11 +69,11 @@ export const TaskForm = () => {
     // write html format of the whole task form with the event listeners inside 
     return (
         <form className="taskForm">
-            <h2 className="taskForm__title">Add a New Task</h2>
+            <h2 className="taskForm__title"> Add a New Task</h2>
 
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="description">Description:</label>
+                    <label htmlFor="description">Description: </label>
 
                     <input
                         required autoFocus
@@ -93,7 +93,7 @@ export const TaskForm = () => {
 
             <fieldset>
                 <div className="select-container">
-                    <label htmlFor="category">Category:</label>
+                    <label htmlFor="category">Category: </label>
                     <select name="category" className="form-control"
 
                         onChange={
@@ -116,7 +116,7 @@ export const TaskForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="name">Is this task urgent?</label>
-                    <input type="checkbox"
+                    <input type="checkbox"className="checkbox"
                         // can't check a checkbox's value but you can check to see if it's checked
                         onChange={
                             (evt) => {
