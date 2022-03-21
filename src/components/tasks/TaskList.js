@@ -140,7 +140,15 @@ export const TaskList = () => {
                                                             (task.description)
                                                         } {""}
 
-                                                        <span class="label bg-green">
+                                                
+                                                        <span class="label-urgent">
+                                                            {task.urgent === true ?
+                                                                ("🚩")
+                                                                :
+                                                                ""}
+                                                                </span> {""}
+
+                                                        <span class="label-category">
                                                             {task.categoryId === "1" ?
                                                                 ("PERSONAL")
                                                                 :
@@ -151,14 +159,16 @@ export const TaskList = () => {
                                                                         ("SCHOOL")
                                                                         :
                                                                         ""}
-                                                        </span>
+                                                        </span> {""} 
 
+                                
                                                         <IconButton onClick={() => { deleteTask(task.id) }}> <DeleteOutlined /></IconButton>
 
                                                         {taskEditing === task.id ?
                                                             (<button onClick={() => editTask(task.id)}>Submit Edits</button>)
                                                             :
                                                             (<IconButton onClick={() => setTaskEditing(task.id)}> <EditOutlined /> </IconButton>)}
+                                                            
 
                                                     </div>
                                                 </div>
