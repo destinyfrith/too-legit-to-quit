@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter&display=swap');
+
 .personal { 
     background: rgb(121, 165, 153); 
     padding: 5px;
@@ -83,6 +85,7 @@ font-size:large;
     .checkbox {
         width: 20px;
         height: 18px;
+        margin: 4px;
         position:inherit;
         border-radius: 1px;
     }
