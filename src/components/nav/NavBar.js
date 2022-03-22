@@ -6,9 +6,6 @@ export const NavBar = () => {
     return (
         <ul className="navbar">
 
-            <li className="logo">
-                TOO LEGIT TO QUIT!
-            </li>
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/tasks/">My Tasks</Link>
             </li>

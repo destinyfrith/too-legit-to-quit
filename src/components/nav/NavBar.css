@@ -1,31 +1,24 @@
 
 .navbar {
 display:flex;
+flex-direction: row;
+justify-content: space-around;
 align-items:center;
 flex-wrap:nowrap;
-justify-content: space-between;
 font-size: 1.1rem;
 height: 60px;
-width: 100%;
-background: black;
-color: white;
+position: relative;
 }
 
 .navbar__item {
-flex-basis: 20%;
+    display: flex;
 list-style-type: none;
 }
 
 .navbar__link {
     display: flex;
-    align-items: right;
-    color: white;
+    align-items: center;
     font-size: large;
     text-decoration: none;
-}
-
-.logo {
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    list-style: none;
-    font-size: large;
+    color:black;
 }

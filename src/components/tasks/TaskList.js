@@ -111,6 +111,7 @@ export const TaskList = () => {
     return (
         <>
             <h2>Current tasks:</h2>
+            <br></br>
             <div className="list_wrapper">
                 {
                     tasks.map(

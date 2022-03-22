@@ -4,6 +4,12 @@
 /*Typography
 --------------------------------------------------------------*/
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
 body {
     display:flex;
     flex-direction: column;
@@ -11,28 +17,37 @@ body {
     text-align: center;
     height: 150vh;
     width: 100%;
-    background: linear-gradient(goldenrod, rgb(153, 223, 153)) no-repeat;
+    background: rgb(169, 214, 169);
 }
 button {
     padding: 10px;
+    cursor: pointer;
 }
-input,
+input {
+    padding: 0%;
+    font-size: 14px;
+}
+
 select,
 textarea {
 color: #0a0a0a;
-line-height: 1;
+line-height: .5;
 }
 
 header {
     font-size: 50px;
     letter-spacing: 4px;
+    min-height: 20vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
-letter-spacing: 6px;
-font-size: 22px;
+letter-spacing: 3px;
+font-size: 20px;
 }
 
 #root  {
-    width: 100%;
+    width: 50%;
 }

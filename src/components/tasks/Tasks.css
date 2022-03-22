@@ -2,13 +2,13 @@
     background: rgb(121, 165, 153); 
     padding: 5px;
     border-radius: 15px;
-    line-height: 2.5;
+    line-height: 3;
 }
 
 .work {
     background: rgb(184, 200, 226);
     padding: 5px;
-    line-height: 2.5;
+    line-height: 3;
     border-radius: 15px;
 }
 
@@ -16,7 +16,7 @@
     background: rgb(230, 224, 179);
     padding: 5px;
     border-radius: 15px;
-    line-height: 2.5;
+    line-height: 3;
 }
 
 .list_wrapper {
@@ -35,7 +35,7 @@
 } 
 
 .editText{
-    line-height: 2.5em;
+    line-height: 3em;
     font-size: 16px;
 }
 
@@ -48,17 +48,24 @@
 .taskForm{
     justify-content: center;
     width: 40rem;
+    color:black;
     margin: 0 auto;
 }
 
 .form-control {
     width:45rem;
     color: black;
+    font-size: large;
+}
+
+.select-container {
+font-size:large;
 }
 
 .form-group{
     color:black;
     width: 100%;
+    font-size: large;
 }
 
 .categorylabel {
@@ -82,12 +89,11 @@
     
 
     .btn-primary {
-        color: blue;
+        background-color: #aa8e8e;
     }
 
     .icons-right {
-    display: flex;
-    justify-content: flex-end;
+    align-items: baseline;
     }
 
     .task {

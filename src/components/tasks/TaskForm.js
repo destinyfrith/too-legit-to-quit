@@ -70,6 +70,7 @@ export const TaskForm = () => {
     return (
         <form className="taskForm">
             <h2 className="taskForm__title"> Add a New Task</h2>
+            <br></br>
 
             <fieldset>
                 <div className="form-group">
@@ -115,7 +116,7 @@ export const TaskForm = () => {
 
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="name">Is this task urgent?</label>
+                    <label htmlFor="name">Is this task urgent? </label>
                     <input type="checkbox"className="checkbox"
                         // can't check a checkbox's value but you can check to see if it's checked
                         onChange={
