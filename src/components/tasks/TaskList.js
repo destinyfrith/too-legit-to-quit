@@ -163,7 +163,7 @@ export const TaskList = () => {
                                                         <IconButton onClick={() => { deleteTask(task.id) }}> <DeleteOutlined /></IconButton>
 
                                                         {taskEditing === task.id ?
-                                                            (<button className="submitbtn" onClick={() => editTask(task.id)}>Submit Edits</button>)
+                                                            (<button className="submitbtn" onClick={() => editTask(task.id)}>Submit</button>)
                                                             :
                                                             (<IconButton onClick={() => setTaskEditing(task.id)}> <EditOutlined /> </IconButton>)}
 

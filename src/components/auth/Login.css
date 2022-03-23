@@ -9,12 +9,6 @@ fieldset {
     border: 0;
 }
 
-.form--login {
-    display: inline-block;
-    margin: 0 auto;
-    text-align: left;
-}
-
 .form--login > fieldset > input[type="email"] {
     width: 25em;
 }
@@ -64,3 +58,10 @@ fieldset {
     min-height: 5rem;
 }
 
+.form--login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: inline-block;
+    margin: 0 auto;
+}

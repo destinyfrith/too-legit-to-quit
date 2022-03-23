@@ -69,7 +69,7 @@ export const TaskForm = () => {
     // write html format of the whole task form with the event listeners inside 
     return (
         <form className="taskForm">
-            <h2 className="taskForm__title"> Add a New Task</h2>
+            <h2 className="taskForm__title"> Add a New Task!</h2>
             <br></br>
 
             <fieldset>

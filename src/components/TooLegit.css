@@ -3,11 +3,8 @@
 
 /*Typography
 --------------------------------------------------------------*/
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing:border-box;
+    box-sizing: border-box;
 }
 
 body {
@@ -25,6 +22,7 @@ button {
 }
 input {
     padding: 0%;
+    height: 30px;
     font-size: 14px;
 }
 
@@ -45,7 +43,7 @@ header {
 }
 
 h1, h2, h3, h4, h5, h6 {
-letter-spacing: 3px;
+letter-spacing: 1px;
 font-size: 20px;
 }
 

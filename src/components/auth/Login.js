@@ -37,6 +37,7 @@ export const Login = () => {
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
                     <h1>Too Legit to Quit</h1>
+                    <br></br>
                     <h2>Please sign in</h2>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>

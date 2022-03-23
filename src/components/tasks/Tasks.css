@@ -102,7 +102,9 @@ font-size:large;
     .task {
         font-size: 18px;
         display:flex;
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         width: 43rem;
+        padding: 1px;
     }
