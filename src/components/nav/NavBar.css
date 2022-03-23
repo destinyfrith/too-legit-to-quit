@@ -12,7 +12,7 @@ position: relative;
 
 .navbar__item {
     display: flex;
-list-style-type: none;
+    list-style-type: none;
 }
 
 .navbar__link {
