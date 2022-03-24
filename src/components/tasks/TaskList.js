@@ -4,6 +4,7 @@ import './Tasks.css';
 import { IconButton } from "@mui/material";
 import DeleteOutlined from "@mui/icons-material/DeleteOutlined"
 import EditOutlined from "@mui/icons-material/EditOutlined"
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 // create the function responsible for displaying the task list/manager
 // set initial state variables 
@@ -112,75 +113,92 @@ export const TaskList = () => {
         <>
             <h2>Current tasks:</h2>
             <br></br>
-            <div className="list_wrapper">
-                {
-                    tasks.map(
-                        (task) => {
-                            if (task.userId === parseInt(localStorage.getItem("legit_user"))) {
-                                return <div key={`task--${task.id}`} >
+            {/* <DragDropContext>
+                <Droppable droppableId="tasks">
+                    {(provided) => ( */}
+                        {/* <div className="list_wrapper" {...provided.droppableProps} ref={provided.innerRef}> */}
+                        <div className="list_wrapper">
+                            {
+                                tasks.map(
+                                    (task, index) => {
+                                        if (task.userId === parseInt(localStorage.getItem("legit_user"))) {
 
-                                    <div className="list-item">
-                                        <div className={`task ${task.categoryId === "1" ? `personal` : ""}`}>
-                                            <div className={`task ${task.categoryId === "2" ? `work` : ""}`}>
-                                                <div className={`task ${task.categoryId === "3" ? `school` : ""}`}>
+                                            return  <div key={`task--${task.id}`} >
+                                                {/* <Draggable key={task.id} draggableId={task} index={index}>
+                                                    {(provided) => ( */}
+                                                        {/* <div className="list-item" {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
+                                                         */}
+                                                            <div className="list-item">
+                                                            <div className={`task ${task.categoryId === "1" ? `personal` : ""}`}>
+                                                                <div className={`task ${task.categoryId === "2" ? `work` : ""}`}>
+                                                                    <div className={`task ${task.categoryId === "3" ? `school` : ""}`}>
 
-                                                    <input type="checkbox" className="checkbox"
-                                                        onChange={() => toggleComplete(task.id)}
-                                                        checked={task.completed} />
+                                                                        <input type="checkbox" className="checkbox"
+                                                                            onChange={() => toggleComplete(task.id)}
+                                                                            checked={task.completed} />
 
-                                                    {taskEditing === task.id ?
-                                                        (<input
-                                                            className="editText"
-                                                            type="text"
-                                                            onChange={(event) => setEditingText(event.target.value)}
-                                                            value={editingText}
-                                                        />)
-                                                        :
-                                                        (task.description)
-                                                    } {""}
+                                                                        {taskEditing === task.id ?
+                                                                            (<input
+                                                                                className="editText"
+                                                                                type="text"
+                                                                                onChange={(event) => setEditingText(event.target.value)}
+                                                                                value={editingText}
+                                                                            />)
+                                                                            :
+                                                                            (task.description)
+                                                                        } {""}
 
-                                                    <span className="label-urgent">
-                                                        {task.urgent === true ?
-                                                            ("🚩")
-                                                            :
-                                                            ""}
-                                                    </span> {""}
+                                                                        <span className="label-urgent">
+                                                                            {task.urgent === true ?
+                                                                                ("🚩")
+                                                                                :
+                                                                                ""}
+                                                                        </span> {""}
 
-                                                    <div className="icons-right">
-                                                        <span className="categorylabel">
-                                                            {task.categoryId === "1" ?
-                                                                ("PERSONAL")
-                                                                :
-                                                                task.categoryId === "2" ?
-                                                                    ("WORK")
-                                                                    :
-                                                                    task.categoryId === "3" ?
-                                                                        ("SCHOOL")
-                                                                        :
-                                                                        ""}
-                                                        </span>
+                                                                        <div className="icons-right">
+                                                                            <span className="categorylabel">
+                                                                                {task.categoryId === "1" ?
+                                                                                    ("PERSONAL")
+                                                                                    :
+                                                                                    task.categoryId === "2" ?
+                                                                                        ("WORK")
+                                                                                        :
+                                                                                        task.categoryId === "3" ?
+                                                                                            ("SCHOOL")
+                                                                                            :
+                                                                                            ""}
+                                                                            </span>
 
-                                                        <IconButton onClick={() => { deleteTask(task.id) }}> <DeleteOutlined /></IconButton>
+                                                                            <IconButton onClick={() => { deleteTask(task.id) }}> <DeleteOutlined /></IconButton>
 
-                                                        {taskEditing === task.id ?
-                                                            (<button className="submitbtn" onClick={() => editTask(task.id)}>Submit</button>)
-                                                            :
-                                                            (<IconButton onClick={() => setTaskEditing(task.id)}> <EditOutlined /> </IconButton>)}
+                                                                            {taskEditing === task.id ?
+                                                                                (<button className="submitbtn" onClick={() => editTask(task.id)}>Submit</button>)
+                                                                                :
+                                                                                (<IconButton onClick={() => setTaskEditing(task.id)}> <EditOutlined /> </IconButton>)}
 
-                                                    </div>
-                                                </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    
+                                
+                                                    
+                                                {/* </Draggable> */}
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
+
+
+                                        }
+
+                                    }
+                                )
 
                             }
+                        </div>
+                    
+                {/* </Droppable>
+            </DragDropContext> */}
 
-                        }
-                    )
-
-                }
-            </div>
         </>
     )
 
