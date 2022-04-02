@@ -36,9 +36,10 @@
     align-items: center;
 } 
 
-.editText{
+.editText {
     line-height: 3em;
     font-size: 16px;
+    justify-content: left;
 }
 
 .submitbtn {
@@ -51,7 +52,7 @@
 .taskForm{
     justify-content: center;
     width: 40rem;
-    color:black;
+    color: #0b0c0b;
     margin: 0 auto;
 }
 
@@ -80,6 +81,10 @@ font-size:large;
     font-weight: bold;
     padding: 6px 5px;
     white-space: nowrap;
+    }
+
+    .label-urgent {
+        text-align: right;
     }
 
     .categorylabel-red {
@@ -124,15 +129,19 @@ font-size:large;
     }
 
     .icons-right {
-    align-items: baseline;
+        text-align: right;
     }
 
     .task {
         font-size: 18px;
         display:flex;
         flex-direction: row;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
         width: 43rem;
     
+    }
+
+    .tasktext {
+        padding: 0px 7px;
     }

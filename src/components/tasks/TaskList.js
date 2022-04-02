@@ -110,7 +110,7 @@ export const TaskList = () => {
 
     return (
         <>
-            <h2>Current tasks:</h2>
+            <h2>C U R R E N T       T A S K S:</h2>
             <br></br>
             {/* <DragDropContext>
                 <Droppable droppableId="tasks">
@@ -144,7 +144,7 @@ export const TaskList = () => {
                                                             value={editingText}
                                                         />)
                                                         :
-                                                        (task.description)
+                                                        (<span className="tasktext">{task.description}</span>)
                                                     } {""}
 
                                                     <span className="label-urgent">
