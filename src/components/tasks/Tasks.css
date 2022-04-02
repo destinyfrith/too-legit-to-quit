@@ -1,21 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter&display=swap');
 
-.personal { 
-    background: rgb(121, 165, 153); 
+.personal {  
+    background: rgb(223, 217, 207);
     padding: 5px;
     border-radius: 15px;
     line-height: 3;
 }
 
 .work {
-    background: rgb(184, 200, 226);
+    background: rgb(223, 217, 207);
     padding: 5px;
     line-height: 3;
     border-radius: 15px;
 }
 
 .school {
-    background: rgb(230, 224, 179);
+    background: rgb(223, 217, 207);
     padding: 5px;
     border-radius: 15px;
     line-height: 3;
@@ -44,7 +44,8 @@
 .submitbtn {
     line-height: .5em;
     color:black;
-    background-color: #aa8e8e;
+    background-color: #66b66a;
+    border-radius: 4px;
 }
 
 .taskForm{
@@ -73,13 +74,39 @@ font-size:large;
 .categorylabel {
     border-radius: 4px;
     display: inline;
-    background-color: #aa8e8e;
     color: rgba(255, 255, 255, 0.897);
     font-size: 0.70rem;
     line-height: 2.5;
     font-weight: bold;
     padding: 6px 5px;
     white-space: nowrap;
+    }
+
+    .categorylabel-red {
+        background-color: rgb(235, 51, 51);
+        border-radius: 4px;
+        line-height: 2.5;
+        font-weight: bold;
+        padding: 6px 5px;
+        white-space: nowrap;
+    }
+
+    .categorylabel-blue {
+        background-color: rgb(31, 146, 212);
+        border-radius: 4px;
+        line-height: 2.5;
+        font-weight: bold;
+        padding: 6px 5px;
+        white-space: nowrap;
+    }
+
+    .categorylabel-green {
+        background-color: rgb(68, 202, 41);
+        border-radius: 4px;
+        line-height: 2.5;
+        font-weight: bold;
+        padding: 6px 5px;
+        white-space: nowrap;
     }
 
     .checkbox {
@@ -92,7 +119,8 @@ font-size:large;
     
 
     .btn-primary {
-        background-color: #aa8e8e;
+        background-color: #66b66a;
+        border-radius: 4px;
     }
 
     .icons-right {
@@ -106,5 +134,5 @@ font-size:large;
         justify-content: space-between;
         align-items: center;
         width: 43rem;
-        padding: 1px;
+    
     }
