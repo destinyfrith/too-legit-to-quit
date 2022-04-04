@@ -110,7 +110,7 @@ export const TaskList = () => {
 
     return (
         <>
-            <h2>C U R R E N T       T A S K S:</h2>
+            <h2>CURRENT TASKS:</h2>
             <br></br>
             {/* <DragDropContext>
                 <Droppable droppableId="tasks">
@@ -132,6 +132,7 @@ export const TaskList = () => {
                                             <div className={`task ${task.categoryId === "2" ? `work` : ""}`}>
                                                 <div className={`task ${task.categoryId === "3" ? `school` : ""}`}>
 
+                                                    <div className="icons-left">
                                                     <input type="checkbox" className="checkbox"
                                                         onChange={() => toggleComplete(task.id)}
                                                         checked={task.completed} />
@@ -146,6 +147,7 @@ export const TaskList = () => {
                                                         :
                                                         (<span className="tasktext">{task.description}</span>)
                                                     } {""}
+                                                    </div>
 
                                                     <span className="label-urgent">
                                                         {task.urgent === true ?
@@ -164,6 +166,7 @@ export const TaskList = () => {
                                                                         :
                                                                         ""}
                                                         </span>
+                                                        
 
 
                                                         <IconButton onClick={() => { deleteTask(task.id) }}> <DeleteOutlined /></IconButton>
@@ -172,12 +175,12 @@ export const TaskList = () => {
                                                             (<button className="submitbtn" onClick={() => editTask(task.id)}>Submit</button>)
                                                             :
                                                             (<IconButton onClick={() => setTaskEditing(task.id)}> <EditOutlined /> </IconButton>)}
-
+                                                            </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    
 
 
 

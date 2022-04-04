@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter&display=swap');
 
 .navbar {
 display:flex;
@@ -17,8 +18,15 @@ position: relative;
 
 .navbar__link {
     display: flex;
+    font-family: 'Bebas Neue';
+    font-family: 'Inter', sans-serif;
     align-items: center;
     font-size: large;
     color: #0b0c0b;
     text-decoration: none;
+    border: 2px solid rgb(93, 153, 93);
+    background-color: rgb(124, 170, 134);
+    padding: 6px 5px;
+    white-space: nowrap;
+    border-radius: 5px;
 }

@@ -7,11 +7,11 @@ export const NavBar = () => {
         <ul className="navbar">
 
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/tasks/">My Tasks</Link>
+                <Link className="navbar__link" to="/tasks/">MY TASKS</Link>
             </li>
 
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/taskform">Add new task</Link>
+                <Link className="navbar__link" to="/taskform">ADD NEW TASK</Link>
             </li>
 
             <li className="navbar__item">
@@ -21,7 +21,7 @@ export const NavBar = () => {
                             localStorage.removeItem("legit_user")
                         }
                     }>
-                    Logout
+                    LOGOUT
                 </Link>
             </li>
         </ul>

@@ -33,8 +33,9 @@ line-height: .5;
 }
 
 header {
-    font-family: 'Inter',sans-serif;
-    font-size: 50px;
+    font-family: 'Bebas Neue';
+    font-family: 'Inter', sans-serif;
+    font-size: 60px;
     letter-spacing: 4px;
     min-height: 20vh;
     display:flex;
@@ -45,6 +46,8 @@ header {
 h1, h2, h3, h4, h5, h6 {
 letter-spacing: 1px;
 font-size: 20px;
+font-family: 'Bebas Neue', cursive;
+font-family: 'Inter', sans-serif;
 }
 
 #root  {
