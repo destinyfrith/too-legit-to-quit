@@ -6,13 +6,13 @@ export const NavBar = () => {
     return (
         <ul className="navbar">
 
+            { <li className="navbar__item active">
+                <Link className="navbar__link" to="/tasks/">My Tasks</Link>
+            </li> }
+{
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/tasks/">MY TASKS</Link>
-            </li>
-
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/taskform">ADD NEW TASK</Link>
-            </li>
+                <Link className="navbar__link" to="/taskform">Add New Task</Link>
+            </li> }
 
             <li className="navbar__item">
                 <Link className="navbar__link" to="#"
@@ -21,7 +21,7 @@ export const NavBar = () => {
                             localStorage.removeItem("legit_user")
                         }
                     }>
-                    LOGOUT
+                    Logout
                 </Link>
             </li>
         </ul>

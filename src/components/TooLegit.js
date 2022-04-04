@@ -6,6 +6,7 @@ import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
 import "./TooLegit.css"
 
+
 export const TooLegit = () => (
     <>
     <Route
@@ -13,7 +14,7 @@ export const TooLegit = () => (
             if (localStorage.getItem("legit_user")) {
                 return (
                     <>
-                        <NavBar />
+                        <NavBar/>
                         <header>too legit to quit!</header>
                         <ApplicationViews />
                     </>
